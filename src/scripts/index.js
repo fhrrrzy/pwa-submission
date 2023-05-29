@@ -12,6 +12,7 @@ const app = new App({
   closeDrawer: document.getElementById('close-drawer'),
   content: document.querySelector('#main'),
   mouseIcon: document.getElementById('mouse-down-icon'),
+  skipContent: document.getElementById('skip-link'),
 });
 
 window.addEventListener('hashchange', () => {
