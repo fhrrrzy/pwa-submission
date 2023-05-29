@@ -19,7 +19,7 @@ const Detail = {
       </div>
 
     <restaurant-detail></restaurant-detail>
-    <button id="love-button"></button>
+    <button id="love-button" aria-label="add this reastaurant to favourite"></button>
     `;
   },
 
