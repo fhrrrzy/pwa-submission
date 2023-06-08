@@ -1,5 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import CONFIG from '../../globals/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 class RestaurantItem extends HTMLElement {
   constructor() {
@@ -22,11 +24,12 @@ class RestaurantItem extends HTMLElement {
       formattedRating = rating.toString();
     }
 
-    const pictureUrl = `${CONFIG.BASE_IMAGE_URL('medium')}/${pictureId}`;
+    const pictureUrlSmall = `${CONFIG.BASE_IMAGE_URL('small')}/${pictureId}`;
+
     this.innerHTML = `
     <section class="card" tabindex="0" aria-label="Restaurant Card">
         <div class="card-image">
-            <img src="${pictureUrl}" aria-label="Photo of ${name}" alt="Photo of ${name}"/>
+            <img src="${pictureUrlSmall}" class="restaurant-card-image lazyload" width="100%" height="auto" aria-label="Photo of ${name}" alt="${name}"/>
             <div class="low-brightness-layer"></div> aria-label="rating"
             <h3><a href="/#/detail/${id}" class="restaurant-name-card">${name}</a></h3>
         </div>

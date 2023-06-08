@@ -85,12 +85,12 @@ class Detail extends HTMLElement {
             <h4>Review</h4>
             <form action="" id="review-form">
                 <div class="form-group">
-                    <label for="">Nama</label>
-                    <input type="text" placeholder="masukan nama anda">
+                    <label for="ame">Nama</label>
+                    <input id="name" type="text" placeholder="masukan nama anda">
                 </div>
                 <div class="form-group">
-                    <label for="">Comment</label>
-                    <textarea name="" id="" cols="30" rows="10"  placeholder="masukan komentar anda"></textarea>
+                    <label for="comment">Comment</label>
+                    <textarea name="" id="comment" cols="30" rows="10"  placeholder="masukan komentar anda"></textarea>
                 </div>
                 <button type="submit">Submit</button>
             </form>

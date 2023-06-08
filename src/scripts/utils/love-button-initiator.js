@@ -1,9 +1,8 @@
-import FavoriteRestraurantIdb from '../data/favourite-restaurant-idb';
-
 const LoveButtonInitiator = {
-  async init({ loveButtonInitiator, restaurant }) {
+  async init({ loveButtonInitiator, favoriteRestaurants: FavoriteRestaurantIdb, restaurant }) {
     this._loveButtonInitiator = loveButtonInitiator;
     this._restaurant = restaurant;
+    this._favoriteRestaurants = FavoriteRestaurantIdb;
 
     await this._renderButton();
   },
@@ -19,7 +18,7 @@ const LoveButtonInitiator = {
   },
 
   async _isRestaurantExist(id) {
-    const restaurant = await FavoriteRestraurantIdb.getRestaurant(id);
+    const restaurant = await this._favoriteRestaurants.getRestaurant(id);
     return !!restaurant;
   },
 
@@ -27,7 +26,7 @@ const LoveButtonInitiator = {
     this._loveButtonInitiator.innerHTML = "<box-icon name='heart' color='red' type='regular'></box-icon>";
 
     this._loveButtonInitiator.addEventListener('click', async () => {
-      await FavoriteRestraurantIdb.putRestaurant(this._restaurant);
+      await this._favoriteRestaurants.putRestaurant(this._restaurant);
       this._renderButton();
     });
   },
@@ -36,7 +35,7 @@ const LoveButtonInitiator = {
     this._loveButtonInitiator.innerHTML = "<box-icon name='heart' color='red' type='solid'></box-icon>";
 
     this._loveButtonInitiator.addEventListener('click', async () => {
-      await FavoriteRestraurantIdb.deleteRestaurant(this._restaurant.id);
+      await this._favoriteRestaurants.deleteRestaurant(this._restaurant.id);
       this._renderButton();
     });
   },

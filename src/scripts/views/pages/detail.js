@@ -3,6 +3,7 @@ import RestaurantSource from '../../data/restaurant-source';
 import '../custom-element/restaurant-detail';
 import ReviewFormInitiator from '../../utils/review-form-initiator';
 import LoveButtonInitiator from '../../utils/love-button-initiator';
+import FavoriteRestaurantIdb from '../../data/favourite-restaurant-idb';
 
 const Detail = {
   async render() {
@@ -19,7 +20,7 @@ const Detail = {
       </div>
 
     <restaurant-detail></restaurant-detail>
-    <button id="love-button" aria-label="add this reastaurant to favourite"></button>
+    <button id="love-button" aria-label="add this restaurant to favourite"></button>
     `;
   },
 
@@ -36,6 +37,7 @@ const Detail = {
       ReviewFormInitiator.init(document.getElementById('review-form'));
       LoveButtonInitiator.init({
         loveButtonInitiator: document.querySelector('#love-button'),
+        favoriteRestaurants: FavoriteRestaurantIdb,
         restaurant: {
           id,
           name,

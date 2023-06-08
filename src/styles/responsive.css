@@ -8,6 +8,10 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .background-image {
+    background-image: url('../public/images/hero-image_4-medium.jpg');
+  }
+
   .circle-1 {
     --circle-size: 9rem;
     animation: expand-circle 2s ease-out calc(100ms * 1) 1 forwards,
@@ -112,6 +116,10 @@
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .background-image {
+    background-image: url('../public/images/hero-image_4-large.jpg');
   }
 
   #not-found img{
