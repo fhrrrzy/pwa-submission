@@ -6,7 +6,7 @@
   "scripts": {
     "test": "karma start",
     "start-dev": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && node sharp.js",
     "serve": "http-server dist",
     "build-image": "node sharp.js",
     "e2e": "codeceptjs run --steps",
