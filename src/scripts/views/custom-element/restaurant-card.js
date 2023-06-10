@@ -29,7 +29,7 @@ class RestaurantItem extends HTMLElement {
     this.innerHTML = `
     <section class="card" tabindex="0" aria-label="Restaurant Card">
         <div class="card-image">
-            <img src="${pictureUrlSmall}" class="restaurant-card-image lazyload" width="100%" height="auto" aria-label="Photo of ${name}" alt="${name}"/>
+            <img data-src="${pictureUrlSmall}" class="restaurant-card-image lazyload" width="100%" height="auto" aria-label="Photo of ${name}" alt="${name}"/>
             <div class="low-brightness-layer"></div> aria-label="rating"
             <h3><a href="/#/detail/${id}" class="restaurant-name-card">${name}</a></h3>
         </div>
